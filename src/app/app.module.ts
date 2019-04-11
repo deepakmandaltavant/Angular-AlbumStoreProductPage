@@ -9,7 +9,12 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import {ProductService} from "./product/product.service";
 
-const appRoutes: Routes = [ ];
+const appRoutes: Routes = [
+  { path: 'albums', component: ProductDescriptionComponent },
+  { path: 'album',component: ProductPageComponent,data: { title: 'Heroes List' }},
+  { path: '',redirectTo: '/album',pathMatch: 'full'},
+  { path: '**', component: ProductDescriptionComponent }
+ ];
 
 @NgModule({
   declarations: [
